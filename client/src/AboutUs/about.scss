@@ -1,0 +1,63 @@
+@import "../config";
+
+@mixin section {
+  width: 80vw;
+  margin: 5rem auto;
+}
+
+@mixin gradient {
+  background: rgb(221, 224, 189);
+  background: linear-gradient(
+    60deg,
+    rgba(152, 156, 101, 0.8) 50%,
+    rgba(97, 112, 79, 0.8) 50%
+  );
+}
+
+.about__us {
+  @include section();
+  @include gradient();
+  padding: 1rem;
+
+  border-radius: 5px;
+  h1,
+  h3 {
+    text-align: center;
+    color: $hover-color;
+    margin: 4rem 0;
+  }
+
+  p {
+    text-align: justify;
+    line-height: 1.5rem;
+    color: white;
+  }
+}
+
+.about__questions {
+  @include gradient();
+  @include section();
+  padding: 1rem;
+
+  h4 {
+    text-align: center;
+    color: $hover-color;
+    margin: 4rem 0;
+  }
+  p {
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  .about__question-question {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .about__question-icon {
+    font-size: 1.1rem;
+    float: right;
+  }
+  .about__question-icon:hover {
+    color: $tertiary-color;
+  }
+}

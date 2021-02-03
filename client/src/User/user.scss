@@ -1,0 +1,44 @@
+@import "../config";
+
+.login {
+  height: 100vh;
+  position: relative;
+  background: rgb(221, 224, 189);
+  background: linear-gradient(
+    60deg,
+    rgba(152, 156, 101, 0.8) 50%,
+    rgba(97, 112, 79, 0.8) 50%
+  );
+  h1 {
+    color: white;
+    margin-bottom: 1.4rem;
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__form {
+    padding: 2rem;
+    text-align: center;
+
+    input {
+      width: 20rem;
+      margin-top: 1rem;
+      padding: 0.3rem;
+      border: 2px solid $tertiary-color;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 2rem;
+      width: 15rem;
+    }
+  }
+}

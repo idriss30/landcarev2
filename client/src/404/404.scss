@@ -1,0 +1,19 @@
+@import "../config";
+
+.error__section {
+  width: 80vw;
+  margin: 8rem auto;
+  &__title {
+    text-align: center;
+
+    h1 {
+      color: $secondary-color;
+      margin: 2rem 0;
+    }
+    a {
+      font-weight: bold;
+      color: $tertiary-color;
+      margin-top: 1rem;
+    }
+  }
+}

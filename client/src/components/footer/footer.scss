@@ -1,0 +1,29 @@
+@import "../../config";
+
+footer {
+  background-color: $hover-color;
+  color: $secondary-color;
+  text-align: center;
+
+  .logo {
+    width: 10%;
+  }
+
+  .footer__container {
+    &-social {
+      ul {
+        list-style: none;
+      }
+      li {
+        display: inline-block;
+        margin-left: 0.3rem;
+      }
+      a {
+        color: white;
+        :hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "./config";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.4rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: monospace, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+
+  @media only screen and(max-width:420px) {
+    font-size: 0.9rem;
+  }
+
+  background-color: white;
+}
+
+section {
+  animation: fadeIn;
+  animation-duration: 2s;
+}

@@ -1,0 +1,67 @@
+@import "../../config";
+
+.nav__bar {
+  width: 100%;
+  height: auto;
+  font-weight: bold;
+  z-index: 1000;
+  background-color: $hover-color;
+  &__list-desktop {
+    list-style: none;
+    align-self: center;
+    animation: fadeInRight;
+    animation-duration: 2s;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__mobile {
+    align-self: center;
+    display: none;
+    @media only screen and(max-width:768px) {
+      display: block;
+    }
+  }
+  &__list-mobile {
+    list-style: none;
+  }
+  &-links-mobile {
+    margin-top: 1rem;
+    position: relative;
+    right: 1rem;
+  }
+  &__container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 0 2rem;
+
+    img {
+      width: 90px;
+      height: 62px;
+      animation: fadeInLeft;
+      animation-duration: 2s;
+    }
+
+    .nav__bar-links {
+      display: inline-block;
+      margin-left: 1.3rem;
+    }
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $primary-color;
+    }
+
+    button {
+      color: $secondary-color;
+      background: none;
+      outline: none;
+      border: none;
+      margin-top: 2rem;
+    }
+  }
+}

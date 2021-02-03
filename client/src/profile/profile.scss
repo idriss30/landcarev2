@@ -1,0 +1,41 @@
+@import "../config";
+
+.messages {
+  min-height: 100vh;
+  width: 80vw;
+  margin: 7rem auto;
+
+  h1 {
+    color: $secondary-color;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__container {
+    width: 100%;
+    a {
+      margin: 0.4rem;
+    }
+    &-group {
+      display: grid;
+      grid-template-columns: 0.5fr 5fr 0.5fr;
+      padding: 1rem;
+      border-bottom: 1px solid $tertiary-color;
+    }
+
+    .group__icon-text {
+      background-color: whitesmoke;
+      padding: 0.8rem;
+      span {
+        color: $tertiary-color;
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+      }
+    }
+
+    .group__icon-envelope,
+    .group__icon-trash {
+      text-align: center;
+    }
+  }
+}

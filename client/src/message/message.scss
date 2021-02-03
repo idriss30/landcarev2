@@ -1,0 +1,38 @@
+@import "../config";
+.message {
+  width: 80vw;
+  margin: 8rem auto;
+  min-height: 100vh;
+
+  &__container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+
+    flex-flow: column nowrap;
+    align-items: center;
+
+    ul {
+      list-style: none;
+      padding: 1rem;
+    }
+
+    li {
+      padding: 0.2rem;
+    }
+
+    button {
+      margin-right: 1rem;
+      width: 10rem;
+      background-color: $primary-color;
+      color: white;
+      border-radius: 4px;
+      padding: 0.2rem;
+
+      @media only screen and (max-width: 720px) {
+        width: auto;
+        min-width: 5rem;
+      }
+    }
+  }
+}
