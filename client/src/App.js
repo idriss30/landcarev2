@@ -43,7 +43,7 @@ class App extends React.Component {
             </Route>
             <Route exact path="/users/login">
               {checkCookie() ? (
-                <Popup url="http://localhost:3000/users/profile">
+                <Popup url="https://landcare.herokuapp.com/users/profile">
                   you are alrealdy logged in,
                   <br /> you are being sent to profile
                 </Popup>
@@ -52,7 +52,7 @@ class App extends React.Component {
               )}
             </Route>
             <Route exact path="/popup">
-              <Popup url="http://localhost:3000">
+              <Popup url="https://landcare.herokuapp.com">
                 your message has been submitted. <br /> we will get back to you
                 shortly!
               </Popup>
@@ -61,7 +61,7 @@ class App extends React.Component {
               {checkCookie() ? (
                 <Profile />
               ) : (
-                <Popup url="http://localhost:3000">
+                <Popup url="https://landcare.herokuapp.com">
                   You do not have authorisation to view this
                 </Popup>
               )}

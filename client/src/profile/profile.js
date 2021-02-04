@@ -47,7 +47,7 @@ class Profile extends React.Component {
                       >
                         <a
                           className="group__icon-envelope"
-                          href={`http://localhost:3000/message/${message._id}`}
+                          href={`https://landcare.herokuapp.com/message/${message._id}`}
                         >
                           <i className="far fa-envelope"></i>
                         </a>
@@ -58,7 +58,7 @@ class Profile extends React.Component {
                           </span>
                           on {message.date}
                           <a
-                            href={`http://localhost:3000/message/${message._id}`}
+                            href={`https://landcare.herokuapp.com/message/${message._id}`}
                           >
                             Click
                           </a>

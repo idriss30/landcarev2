@@ -23,7 +23,7 @@ class Form extends React.Component {
     this.setState(
       { firstName: "", lastName: "", email: "", phone: "", textArea: "" },
       () => {
-        window.location.href = "http://localhost:3000/popup";
+        window.location.href = "https://landcare.herokuapp.com/popup";
       }
     );
   };

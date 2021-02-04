@@ -42,7 +42,7 @@ function MessageDisplay() {
                   .then((serverAnswer) => {
                     if (serverAnswer.data.message === "success") {
                       window.location.replace(
-                        "http://localhost:3000/users/profile"
+                        "https://landcare.herokuapp.com/users/profile"
                       );
                     }
                   })
@@ -54,7 +54,9 @@ function MessageDisplay() {
             <Button
               scss="btn-small"
               onClick={() => {
-                window.location.replace("http://localhost:3000/users/profile");
+                window.location.replace(
+                  "https://landcare.herokuapp.com/users/profile"
+                );
               }}
             >
               Previous Page
