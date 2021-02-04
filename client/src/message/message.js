@@ -13,7 +13,7 @@ function MessageDisplay() {
   // launch request on component mounting
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/form/message/${id}`)
+      .get(`/api/form/message/${id}`)
       .then((messageObject) => {
         //extract final message
         const mess = messageObject.data.message;
@@ -38,9 +38,7 @@ function MessageDisplay() {
               scss="btn-small"
               onClick={() => {
                 axios
-                  .get(
-                    `http://localhost:4000/form/message/delete/${message._id}`
-                  )
+                  .get(`/api/form/message/delete/${message._id}`)
                   .then((serverAnswer) => {
                     if (serverAnswer.data.message === "success") {
                       window.location.replace(

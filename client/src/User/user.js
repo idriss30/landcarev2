@@ -31,7 +31,7 @@ class Login extends React.Component {
     // send the userData for verification in backend
     const userData = { ...this.state };
     axios
-      .post("http://localhost:4000/users/login", { userData })
+      .post("/api/users/login", { userData })
       .then((response) => {
         const data = response.data;
         if (data.error) {

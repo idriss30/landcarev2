@@ -36,7 +36,7 @@ class Form extends React.Component {
       const userData = { ...this.state };
       // send the request
       axios
-        .post("http://localhost:4000/form", { userData })
+        .post("/api/form", { userData })
         .then((response) => {
           if (response.data.message === "success") {
             this.resetForm();

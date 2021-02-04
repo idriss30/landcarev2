@@ -4,22 +4,24 @@ const bodyParser = require("body-parser");
 const formRoutes = require("./routes/formRoute");
 const userRoutes = require("./routes/loginRoute");
 const mongoose = require("mongoose");
+const path = require("path");
 
 require("dotenv").config();
 
 // initialise express
 const app = express();
 // create port
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 5000;
 // configuration for basic rest
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "client", "build")));
 app.use("/api/form", formRoutes);
 app.use("/api/users", userRoutes);
 
-app.use((req, res, next) => {
-  res.json({ message: "nothing to see here" });
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 // connect to the database

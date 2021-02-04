@@ -12,7 +12,7 @@ class Profile extends React.Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:4000/form/messages")
+      .get("/api/form/messages")
       .then((result) => {
         this.setState({ messages: [...result.data.messages] });
       })
@@ -20,7 +20,7 @@ class Profile extends React.Component {
   }
   handleDelete = (e) => {
     axios
-      .get(`http://localhost:4000/form/message/delete/${e.target.id}`)
+      .get(`/api/form/message/delete/${e.target.id}`)
       .then((serverAnswer) => {
         if (serverAnswer.data.message === "success") {
           const list = [...this.state.messages];
