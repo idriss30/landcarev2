@@ -38,7 +38,9 @@ class Login extends React.Component {
           alert(data.error);
         } else {
           document.cookie = "valid=true";
-          window.location.replace("http://localhost:3000/users/profile");
+          window.location.replace(
+            "https://landcare.herokuapp.com/users/profile"
+          );
         }
       })
       .catch((err) => {
