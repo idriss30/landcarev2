@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../components/button/button";
+
 import axios from "axios";
 
 class Form extends React.Component {
@@ -16,7 +16,8 @@ class Form extends React.Component {
 
   checkEmail = (email) => {
     // create regex to check email
-    const reGex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const reGex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return reGex.test(String(email).toLowerCase());
   };
   resetForm = () => {
@@ -134,9 +135,7 @@ class Form extends React.Component {
             ></textarea>
           </div>
 
-          <Button scss="btn" id="submit">
-            Send Message
-          </Button>
+          <button id="submit">Send Message</button>
         </form>
       </>
     );

@@ -1,45 +1,48 @@
 @import "../config";
 
-@mixin section {
-  width: 80vw;
-  margin: 5rem auto;
-}
-
 @mixin gradient {
-  background: rgb(221, 224, 189);
+  background: rgb(202, 212, 157);
   background: linear-gradient(
-    60deg,
-    rgba(152, 156, 101, 0.8) 50%,
-    rgba(97, 112, 79, 0.8) 50%
+    90deg,
+    rgba(202, 212, 157, 0.8) 4%,
+    rgba(71, 123, 80, 1) 63%
   );
 }
 
 .about__us {
-  @include section();
-  @include gradient();
+  width: 100%;
+
   padding: 1rem;
 
-  border-radius: 5px;
   h1,
-  h3 {
+  h2 {
     text-align: center;
-    color: $hover-color;
-    margin: 4rem 0;
+    color: $tertiary-color;
+    margin: 8rem 0 4rem 0;
   }
 
   p {
-    text-align: justify;
-    line-height: 1.5rem;
-    color: white;
+    line-height: 2rem;
+    width: 70%;
+    margin: 0 auto;
+
+    @media only screen and(max-width:420px) {
+      width: 90%;
+    }
   }
 }
 
 .about__questions {
   @include gradient();
-  @include section();
-  padding: 1rem;
+  min-height: 70vh;
+  padding: 1rem 1rem 8rem 1rem;
 
-  h4 {
+  &__container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h3 {
     text-align: center;
     color: $hover-color;
     margin: 4rem 0;
@@ -59,5 +62,58 @@
   }
   .about__question-icon:hover {
     color: $tertiary-color;
+  }
+}
+
+// about us section 2
+.about__us__two {
+  margin-bottom: 5rem;
+  width: 90%;
+  height: 40vh;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  @media only screen and(max-width:540px) {
+    height: 65vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10vh;
+  }
+
+  .second {
+    margin-top: 20vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    @media only screen and(max-width:540px) {
+      margin-top: 12vh;
+      border-radius: 0;
+    }
+  }
+
+  &__container-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid $tertiary-color;
+    font-size: 0.8rem;
+    text-align: center;
+    height: 50%;
+
+    @media only screen and(max-width:540px) {
+      height: 65%;
+    }
+    img {
+      width: 5rem;
+      max-height: 100%;
+
+      @media only screen and(max-width:540px) {
+        width: 3rem;
+      }
+
+      @media only screen and(max-width:360px) {
+        width: 2rem;
+      }
+    }
   }
 }

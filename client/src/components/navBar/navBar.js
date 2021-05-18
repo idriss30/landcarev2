@@ -10,7 +10,7 @@ import { NavLink, Link } from "react-router-dom";
 const Links = ({ styleName }) => {
   return menuItems.map((item) => {
     return (
-      <li className={styleName} key={item.title}>
+      <div className={styleName} key={item.title}>
         <NavLink
           exact
           to={item.link}
@@ -18,7 +18,7 @@ const Links = ({ styleName }) => {
         >
           {item.title}
         </NavLink>
-      </li>
+      </div>
     );
   });
 };
@@ -52,29 +52,27 @@ class NavBar extends React.Component {
                 </a>
               </li>
             </ul>
+
             <div className="nav__bar__mobile">
               <button onClick={this.handleClick}>
                 <i
                   className={this.state.toggle ? "fas fa-times" : "fas fa-bars"}
                 ></i>
               </button>
-              <div>
-                <ul className="nav__bar__list-mobile">
-                  {this.state.toggle && (
-                    <Links styleName="nav__bar-links-mobile" />
-                  )}
-                  {this.state.toggle && (
-                    <li className="nav__bar-links-mobile">
-                      <a href="/#contact" name="contact">
-                        Contact Us
-                      </a>
-                    </li>
-                  )}
-                </ul>
-              </div>
             </div>
           </div>
         </nav>
+        {this.state.toggle && (
+          <div
+            className="nav__bar__mobile-list"
+            onClick={() => {
+              this.setState({ toggle: false });
+            }}
+          >
+            <Links styleName="nav__bar__mobile-list-links" />
+            <a href="/#contact">Contact Us</a>
+          </div>
+        )}
       </header>
     );
   }

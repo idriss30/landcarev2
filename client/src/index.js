@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "animate.css";
+import "animate.css/animate.min.css";
 import "./index.scss";
 import App from "./App";
 
