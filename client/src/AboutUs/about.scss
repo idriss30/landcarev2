@@ -69,15 +69,20 @@
 .about__us__two {
   margin-bottom: 5rem;
   width: 90%;
-  height: 40vh;
+  min-height: 80vh;
   margin: 4rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
-  @media only screen and(max-width:540px) {
-    height: 65vh;
+  @media only screen and(max-width:740px) {
+    min-height: 90vh;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 10vh;
+  }
+
+  @media only screen and(max-width:320px) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
   }
 
   .second {
@@ -86,7 +91,6 @@
     border-bottom-right-radius: 10px;
 
     @media only screen and(max-width:540px) {
-      margin-top: 12vh;
       border-radius: 0;
     }
   }
@@ -99,15 +103,17 @@
     font-size: 0.8rem;
     text-align: center;
     height: 50%;
+    padding: 0.5rem;
+    box-sizing: border-box;
 
-    @media only screen and(max-width:540px) {
-      height: 65%;
+    @media only screen and(max-width:740px) {
+      height: 45%;
     }
     img {
       width: 5rem;
       max-height: 100%;
 
-      @media only screen and(max-width:540px) {
+      @media only screen and(max-width:740px) {
         width: 3rem;
       }
 

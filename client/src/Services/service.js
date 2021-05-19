@@ -19,8 +19,8 @@ class Services extends React.Component {
                 <h1>Our Services</h1>
                 <h2>
                   Whether you need full-time lawn care services or a one-time
-                  cleanup, Lawn Guy Pro offers a number of landscaping services
-                  in Central Mass
+                  cleanup, LandCare offers a number of landscaping services in
+                  Central Mass
                 </h2>
               </div>
               <div className="service__content">
@@ -35,7 +35,7 @@ class Services extends React.Component {
                     />
                   </div>
 
-                  <h4>Green</h4>
+                  <h3>Green</h3>
                   <p>
                     Our basic lawn care package to keep your yard looking neat
                     and clean. This includes Mowing, Edging - to give your
@@ -44,13 +44,13 @@ class Services extends React.Component {
                     from your lawn care service.
                   </p>
                 </div>
-                <div className="service__content-group">
+                <div className="service__content-group healthy">
                   <img
                     src={healthy}
                     alt="service__image"
                     name="service__image"
                   />
-                  <h4>Healthy</h4>
+                  <h3>Healthy</h3>
                   <p>
                     Our plus lawn care package to help increase the overall
                     health and appearance of grassy areas. This includes the
@@ -61,7 +61,7 @@ class Services extends React.Component {
                 </div>
                 <div className="service__content-group">
                   <img src={lush} alt="service__image" name="service__image" />
-                  <h4>Lush</h4>
+                  <h3>Lush</h3>
                   <p>
                     Our premium lawn care package to help you achieve a healthy,
                     lush, green lawn. This includes the Green and Healthy
