@@ -2,12 +2,12 @@ import React from "react";
 
 import "./service.scss";
 import Footer from "../components/footer/footer";
-import lush from "./serviceAssets/lush.svg";
 
-import healthy from "./serviceAssets/healthy.svg";
 import ScrollAnimation from "react-animate-on-scroll";
-import LandingJson from "../Landing/landingsvg/landing.json";
-import Lottie from "react-lottie-player";
+
+import lush from "../svgs/lush.jpg";
+import green from "../svgs/green.jpg";
+import healthy from "../svgs/healthy.jpg";
 class Services extends React.Component {
   render() {
     return (
@@ -26,13 +26,7 @@ class Services extends React.Component {
               <div className="service__content">
                 <div className="service__content-group">
                   <div>
-                    <Lottie
-                      loop
-                      animationData={LandingJson}
-                      play
-                      style={{ maxWidth: "100%", height: "74%" }}
-                      rendererSettings={{ preserveAspectRatio: "none" }}
-                    />
+                    <img src={green} alt="green services" name="green" />
                   </div>
 
                   <h3>Green</h3>

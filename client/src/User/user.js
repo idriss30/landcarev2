@@ -34,6 +34,7 @@ class Login extends React.Component {
       .post("/api/users/login", { userData })
       .then((response) => {
         const data = response.data;
+
         if (data.error) {
           alert(data.error);
         } else {

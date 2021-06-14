@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
+
 const formRoutes = require("./routes/formRoute");
 const userRoutes = require("./routes/loginRoute");
 const mongoose = require("mongoose");
@@ -14,8 +14,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 // configuration for basic rest
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "client", "build")));
 app.use("/api/form", formRoutes);
 app.use("/api/users", userRoutes);
