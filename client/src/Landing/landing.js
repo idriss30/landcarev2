@@ -37,125 +37,116 @@ class Landing extends React.Component {
           </div>
           <section className="section__one">
             <div className="section__one__container">
-              <ScrollAnimation animateIn="animate__animated animate__slideInUp">
-                <div className="section__one__container-text">
+              <div className="section__one__container-text">
+                <ScrollAnimation animateIn="animate__animated animate__slideInUp">
                   <h2>RELIABLE SERVICE WITH QUALITY RESULTS</h2>
+                </ScrollAnimation>
 
-                  <p>
-                    <span>LandC@re </span>was built on customer service and
-                    continue to grow through high standards of excellence.
-                    Therefore, we stand behind our work with pride.
-                  </p>
-                  <p>
-                    Our experts specialize in landscape maintenance and snow
-                    removal. We are always ready to create outstanding
-                    experiences for our clients and provide a service second to
-                    none.
-                  </p>
-                  <p>
-                    We can work with you to design, install and maintain any new
-                    or existing landscape.
-                  </p>
-                  <p>
-                    We primarily cater to residential but also do select
-                    commercial and multi-family properties. We also offer
-                    enhancement services, seasonal color, irrigation, and
-                    landscape lighting.
-                  </p>
-                </div>
-              </ScrollAnimation>
+                <p>
+                  <span>LandC@re </span>was built on customer service and
+                  continue to grow through high standards of excellence.
+                  Therefore, we stand behind our work with pride.
+                </p>
+                <p>
+                  Our experts specialize in landscape maintenance and snow
+                  removal. We are always ready to create outstanding experiences
+                  for our clients and provide a service second to none.
+                </p>
+                <p>
+                  We can work with you to design, install and maintain any new
+                  or existing landscape.
+                </p>
+                <p>
+                  We primarily cater to residential but also do select
+                  commercial and multi-family properties. We also offer
+                  enhancement services, seasonal color, irrigation, and
+                  landscape lighting.
+                </p>
+              </div>
             </div>
           </section>
-          <ScrollAnimation animateIn="animated__animate animate__slideInUp">
-            <section className="section__two">
+
+          <section className="section__two">
+            <ScrollAnimation animateIn="animated__animate animate__slideInUp">
               <h3>What Makes us Unique</h3>
-              <div className="section__two__container">
-                <div className="section__two__container-group">
-                  <div>
-                    <img
-                      src={established}
-                      alt="established"
-                      name="established"
-                    />
-                  </div>
+            </ScrollAnimation>
+            <div className="section__two__container">
+              <div className="section__two__container-group">
+                <div>
+                  <img src={established} alt="established" name="established" />
+                </div>
 
-                  <p>established in 2014</p>
-                </div>
-                <div className="section__two__container-group second">
-                  <div>
-                    <img
-                      src={environment}
-                      alt="environment"
-                      name="environment"
-                    />
-                  </div>
-
-                  <p>environment friendly</p>
-                </div>
-                <div className="section__two__container-group">
-                  <div>
-                    <img src={licenced} alt="established" name="established" />
-                  </div>
-
-                  <p>Licenced professionals</p>
-                </div>
-                <div className="section__two__container-group second">
-                  <div>
-                    <img src={vet} alt="veterans" name="veterans" />
-                  </div>
-
-                  <p>Owned by veterans</p>
-                </div>
-                <div className="section__two__container-group">
-                  <div>
-                    <img
-                      src={satisfaction}
-                      alt="satisfaction"
-                      name="satisfaction guarantee"
-                    />
-                  </div>
-                  <p>Satisfaction Guarantee</p>
-                </div>
-                <div className="section__two__container-group second">
-                  <div>
-                    <img src={budget} alt="budget" name="budget friendly" />
-                  </div>
-
-                  <p>Budget friendly</p>
-                </div>
+                <p>established in 2014</p>
               </div>
-              <div className="section__two__cta">
-                <Link to="/about">Learn More</Link>
-              </div>
-            </section>
-          </ScrollAnimation>
-          <ScrollAnimation animateIn="animated__animate animate__slideInUp">
-            <section className="get__in__touch">
-              <div className="get__in__touch__container" id="contact">
-                <div className="get__in__touch__container-text">
-                  <h4>Get Started</h4>
-                  <p>
-                    We'd love to hear from you. <br />
-                    To find out about us and how we can make the landscaping
-                    process pain-free, just get in touch.
-                    <br />
-                    We'll be happy to answer any questions and discuss your
-                    plans. Contact us today!
-                  </p>
-
-                  <p>
-                    <i className="fa fa-phone icons" aria-hidden="true">
-                      <span> 508 444 9898</span>
-                    </i>
-                  </p>
+              <div className="section__two__container-group second">
+                <div>
+                  <img src={environment} alt="environment" name="environment" />
                 </div>
 
-                <div className="get__in__touch__container-form">
-                  <Form />
-                </div>
+                <p>environment friendly</p>
               </div>
-            </section>
-          </ScrollAnimation>
+              <div className="section__two__container-group">
+                <div>
+                  <img src={licenced} alt="established" name="established" />
+                </div>
+
+                <p>Licenced professionals</p>
+              </div>
+              <div className="section__two__container-group second">
+                <div>
+                  <img src={vet} alt="veterans" name="veterans" />
+                </div>
+
+                <p>Owned by veterans</p>
+              </div>
+              <div className="section__two__container-group">
+                <div>
+                  <img
+                    src={satisfaction}
+                    alt="satisfaction"
+                    name="satisfaction guarantee"
+                  />
+                </div>
+                <p>Satisfaction Guarantee</p>
+              </div>
+              <div className="section__two__container-group second">
+                <div>
+                  <img src={budget} alt="budget" name="budget friendly" />
+                </div>
+
+                <p>Budget friendly</p>
+              </div>
+            </div>
+            <div className="section__two__cta">
+              <Link to="/about">Learn More</Link>
+            </div>
+          </section>
+
+          <section className="get__in__touch">
+            <div className="get__in__touch__container" id="contact">
+              <div className="get__in__touch__container-text">
+                <h4>Get Started</h4>
+                <p>
+                  We'd love to hear from you. <br />
+                  To find out about us and how we can make the landscaping
+                  process pain-free, just get in touch.
+                  <br />
+                  We'll be happy to answer any questions and discuss your plans.
+                  Contact us today!
+                </p>
+
+                <p>
+                  <i className="fa fa-phone icons" aria-hidden="true">
+                    <span> 508 444 9898</span>
+                  </i>
+                </p>
+              </div>
+
+              <div className="get__in__touch__container-form">
+                <Form />
+              </div>
+            </div>
+          </section>
         </div>
         <Footer />
       </>
