@@ -33,12 +33,12 @@
 }
 
 .about__questions {
-  @include gradient();
+  background-color: #5f7b47;
   min-height: 70vh;
   padding: 1rem 1rem 8rem 1rem;
 
   &__container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
   }
 
@@ -68,16 +68,15 @@
 // about us section 2
 .about__us__two {
   margin-bottom: 5rem;
-  width: 90%;
-  min-height: 80vh;
-  margin: 4rem auto;
+  width: 80%;
+  min-height: 70vh;
+  margin: 4rem auto 0rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
   @media only screen and(max-width:740px) {
     min-height: 90vh;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 10vh;
+    grid-template-columns: 1fr 1fr;
   }
 
   @media only screen and(max-width:320px) {
@@ -85,21 +84,11 @@
     row-gap: 1rem;
   }
 
-  .second {
-    margin-top: 20vh;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-    @media only screen and(max-width:540px) {
-      border-radius: 0;
-    }
-  }
-
   &__container-group {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid $tertiary-color;
+
     font-size: 0.8rem;
     text-align: center;
     height: 50%;
