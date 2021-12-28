@@ -88,7 +88,7 @@
     rgba(71, 123, 80, 1) 62%
   ); */
 
-  width: 90%;
+  width: 80%;
   height: auto;
   margin: 0 auto;
 
@@ -120,7 +120,7 @@
       width: 100%;
       margin: 0 auto;
       display: flex;
-      flex-flow: column nowrap;
+      flex-flow: column;
 
       img {
         width: 100%;
@@ -128,8 +128,8 @@
       }
 
       &-group {
-        width: 50%;
-        margin: 2rem 0;
+        width: 100%;
+        margin: 4rem 0;
         border-bottom: 1px solid $hover-color;
 
         background: rgb(202, 212, 157);
@@ -160,10 +160,6 @@
         @media only screen and(max-width:420px) {
           line-height: 2.2rem;
         }
-      }
-
-      .healthy {
-        align-self: flex-end;
       }
     }
   }
