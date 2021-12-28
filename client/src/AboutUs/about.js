@@ -72,55 +72,53 @@ function About() {
           </div>
           <h2>What Makes us Unique</h2>
 
-          <ScrollAnimation animateIn="animated__animate animate__slideInUp">
-            <div className="about__us__two">
-              <div className="about__us__two__container-group">
-                <div>
-                  <img src={established} alt="established" name="established" />
-                </div>
+          <div className="about__us__two">
+            <div className="about__us__two__container-group">
+              <div>
+                <img src={established} alt="established" name="established" />
+              </div>
 
-                <p>established in 2014</p>
-              </div>
-              <div className="about__us__two__container-group second">
-                <div>
-                  <img src={environment} alt="environment" name="environment" />
-                </div>
-
-                <p>environment friendly</p>
-              </div>
-              <div className="about__us__two__container-group">
-                <div>
-                  <img src={licenced} alt="established" name="established" />
-                </div>
-
-                <p>Licenced professionals</p>
-              </div>
-              <div className="about__us__two__container-group second">
-                <div>
-                  <img src={vet} alt="veterans" name="veterans" />
-                </div>
-
-                <p>Veterans owned</p>
-              </div>
-              <div className="about__us__two__container-group">
-                <div>
-                  <img
-                    src={satisfaction}
-                    alt="satisfaction"
-                    name="satisfaction guarantee"
-                  />
-                </div>
-                <p>Satisfaction Guarantee</p>
-              </div>
-              <div className="about__us__two__container-group second">
-                <div>
-                  <img src={budget} alt="budget" name="budget friendly" />
-                </div>
-
-                <p>Budget friendly</p>
-              </div>
+              <p>established in 2014</p>
             </div>
-          </ScrollAnimation>
+            <div className="about__us__two__container-group second">
+              <div>
+                <img src={environment} alt="environment" name="environment" />
+              </div>
+
+              <p>environment friendly</p>
+            </div>
+            <div className="about__us__two__container-group">
+              <div>
+                <img src={licenced} alt="established" name="established" />
+              </div>
+
+              <p>Licenced professionals</p>
+            </div>
+            <div className="about__us__two__container-group second">
+              <div>
+                <img src={vet} alt="veterans" name="veterans" />
+              </div>
+
+              <p>Veterans owned</p>
+            </div>
+            <div className="about__us__two__container-group">
+              <div>
+                <img
+                  src={satisfaction}
+                  alt="satisfaction"
+                  name="satisfaction guarantee"
+                />
+              </div>
+              <p>Satisfaction Guarantee</p>
+            </div>
+            <div className="about__us__two__container-group second">
+              <div>
+                <img src={budget} alt="budget" name="budget friendly" />
+              </div>
+
+              <p>Budget friendly</p>
+            </div>
+          </div>
         </div>
       </section>
 
