@@ -27,11 +27,8 @@ const Footer = () => {
         </div>
         <div className="footer__container-text"></div>
 
-        <span>LandC@re copyright 2020</span>
-        <p>
-          This is a mockup, it is just for demonstration purpose. Do not
-          reproduce or copy any materials on this website.
-        </p>
+        <span>copyright LandC@re</span>
+        <p>This is a mockup, it is just for demonstration purpose..</p>
         <div>
           <a href="/users/login">Admin Login</a>
         </div>
