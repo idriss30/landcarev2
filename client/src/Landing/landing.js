@@ -1,5 +1,4 @@
 import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
 import "./landing.scss";
 import vet from "./landingAssets/vet.png";
 import licenced from "./landingAssets/licenced.png";
@@ -38,9 +37,7 @@ class Landing extends React.Component {
           <section className="section__one">
             <div className="section__one__container">
               <div className="section__one__container-text">
-                <ScrollAnimation animateIn="animate__animated animate__slideInUp">
-                  <h2>RELIABLE SERVICE WITH QUALITY RESULTS</h2>
-                </ScrollAnimation>
+                <h2>RELIABLE SERVICE WITH QUALITY RESULTS</h2>
 
                 <p>
                   <span>LandC@re </span>was built on customer service and
@@ -67,9 +64,8 @@ class Landing extends React.Component {
           </section>
 
           <section className="section__two">
-            <ScrollAnimation animateIn="animated__animate animate__slideInUp">
-              <h3>What Makes us Unique</h3>
-            </ScrollAnimation>
+            <h3>What Makes us Unique</h3>
+
             <div className="section__two__container">
               <div className="section__two__container-group">
                 <div>
