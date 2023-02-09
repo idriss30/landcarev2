@@ -1,7 +1,6 @@
 import React from "react";
 import "./about.scss";
 import Footer from "../components/footer/footer";
-
 import vet from "../Landing/landingAssets/vet.png";
 import licenced from "../Landing/landingAssets/licenced.png";
 import established from "../Landing/landingAssets/established.png";
