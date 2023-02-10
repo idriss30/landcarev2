@@ -2,6 +2,7 @@ import React from "react";
 import "./profile.scss";
 import axios from "axios";
 import Footer from "../components/footer/footer.js";
+import { Link } from "react-router-dom";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -12,15 +13,17 @@ class Profile extends React.Component {
   }
   componentDidMount() {
     axios
-      .get("/api/form/messages")
+      .get(`${process.env.REACT_APP_BACKENDLINK}/api/form/messages`)
       .then((result) => {
         this.setState({ messages: [...result.data.messages] });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err));
   }
   handleDelete = (e) => {
     axios
-      .get(`/api/form/message/delete/${e.target.id}`)
+      .get(
+        `${process.env.REACT_APP_BACKENDLINK}/api/form/message/delete/${e.target.id}`
+      )
       .then((serverAnswer) => {
         if (serverAnswer.data.message === "success") {
           const list = [...this.state.messages];
@@ -28,7 +31,7 @@ class Profile extends React.Component {
           this.setState({ messages: [...newList] });
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err));
   };
   render() {
     const list = [...this.state.messages];
@@ -45,23 +48,23 @@ class Profile extends React.Component {
                         className="messages__container-group"
                         key={message._id}
                       >
-                        <a
+                        <Link
                           className="group__icon-envelope"
-                          href={`https://landcare.herokuapp.com/message/${message._id}`}
+                          to={`${process.env.REACT_APP_LINK}/message/${message._id}`}
                         >
                           <i className="far fa-envelope"></i>
-                        </a>
+                        </Link>
                         <p className="group__icon-text">
                           from
                           <span>
                             {`${message.firstName} , ${message.lastName}`}
                           </span>
                           on {message.date}
-                          <a
-                            href={`https://landcare.herokuapp.com/message/${message._id}`}
+                          <Link
+                            to={`${process.env.REACT_APP_LINK}/message/${message._id}`}
                           >
                             Click
-                          </a>
+                          </Link>
                           to read
                         </p>
 

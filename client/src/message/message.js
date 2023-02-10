@@ -13,7 +13,7 @@ function MessageDisplay() {
   // launch request on component mounting
   useEffect(() => {
     axios
-      .get(`/api/form/message/${id}`)
+      .get(`${process.env.REACT_APP_BACKENDLINK}/api/form/message/${id}`)
       .then((messageObject) => {
         //extract final message
         const mess = messageObject.data.message;
@@ -38,11 +38,13 @@ function MessageDisplay() {
               scss="btn-small"
               onClick={() => {
                 axios
-                  .get(`/api/form/message/delete/${message._id}`)
+                  .get(
+                    `${process.env.REACT_APP_BACKENDLINK}/api/form/message/delete/${message._id}`
+                  )
                   .then((serverAnswer) => {
                     if (serverAnswer.data.message === "success") {
                       window.location.replace(
-                        "https://landcare.herokuapp.com/users/profile"
+                        `${process.env.REACT_APP_LINK}/users/profile`
                       );
                     }
                   })
@@ -55,7 +57,7 @@ function MessageDisplay() {
               scss="btn-small"
               onClick={() => {
                 window.location.replace(
-                  "https://landcare.herokuapp.com/users/profile"
+                  `${process.env.REACT_APP_LINK}/users/profile`
                 );
               }}
             >
