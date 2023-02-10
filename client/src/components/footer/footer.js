@@ -1,5 +1,6 @@
 import "./footer.scss";
 import { ReactComponent as Logo } from "../../svgs/logo.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,17 +10,29 @@ const Footer = () => {
         <div className="footer__container-social">
           <ul>
             <li>
-              <a href="https://www.facebook.com/">
+              <a
+                target={"_blank"}
+                rel={"noreferrer noopener"}
+                href="https://www.facebook.com/"
+              >
                 <i className="fab fa-facebook-square "></i>
               </a>
             </li>
             <li>
-              <a href="https://www.twitter.com/">
+              <a
+                target={"_blank"}
+                rel={"noreferrer noopener"}
+                href="https://www.twitter.com/"
+              >
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/">
+              <a
+                target={"_blank"}
+                rel={"noreferrer noopener"}
+                href="https://www.instagram.com/"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
@@ -30,7 +43,7 @@ const Footer = () => {
         <span>copyright LandC@re</span>
         <p>This is a mockup, it is just for demonstration purpose..</p>
         <div>
-          <a href="/users/login">Admin Login</a>
+          <Link to="/users/login">Admin Login</Link>
         </div>
       </div>
     </footer>
