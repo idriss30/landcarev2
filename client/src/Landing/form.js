@@ -1,5 +1,4 @@
 import React from "react";
-
 import axios from "axios";
 
 class Form extends React.Component {
@@ -14,41 +13,30 @@ class Form extends React.Component {
     };
   }
 
-  checkEmail = (email) => {
-    // create regex to check email
-    const reGex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return reGex.test(String(email).toLowerCase());
-  };
   resetForm = () => {
     this.setState(
       { firstName: "", lastName: "", email: "", phone: "", textArea: "" },
       () => {
-        window.location.href = "https://landcare.herokuapp.com/popup";
+        window.location.href = `${process.env.REACT_APP_LINK}/popup`;
       }
     );
   };
   formClick = (e) => {
     // prevent default behavior
     e.preventDefault();
-    // check email state
-    const email = this.checkEmail(this.state.email);
-    if (email) {
-      const userData = { ...this.state };
-      // send the request
-      axios
-        .post("/api/form", { userData })
-        .then((response) => {
-          if (response.data.message === "success") {
-            this.resetForm();
-          } else {
-            alert("some error with your message");
-          }
-        })
-        .catch((err) => console.log(err));
-    } else {
-      alert("your email is not valid");
-    }
+
+    const userData = { ...this.state };
+    // send the request
+    axios
+      .post(`${process.env.REACT_APP_BACKENDLINK}/api/form`, { userData })
+      .then((response) => {
+        if (response.data.message === "success") {
+          // this.resetForm();
+        } else {
+          alert("some error with your message");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   handleChange = (e) => {
