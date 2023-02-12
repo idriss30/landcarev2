@@ -25,10 +25,9 @@ class Landing extends React.Component {
 
               <Link to="/about">About us</Link>
 
-              <a href="#contact">Contact Us</a>
+              <a href="/#contact">Contact Us</a>
             </div>
             <div className="landing__container-animation">
-              {/* <LottieAnimation source={forestJson} looping={false} /> */}
               <div className="landing__container-animation-image">
                 <img src={Background} alt="background" />
               </div>
