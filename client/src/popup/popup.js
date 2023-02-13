@@ -1,5 +1,6 @@
 import "./popup.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Popup extends React.Component {
   componentDidMount() {
@@ -12,9 +13,9 @@ class Popup extends React.Component {
       <>
         <div className="popup">
           <div className="popup__container">
-            <a href="/" alt="close-button">
+            <Link to="/" alt="close-button">
               <i className="fas fa-times-circle"></i>
-            </a>
+            </Link>
             <div className="popup__container-text">
               <p>{this.props.children}</p>
             </div>
