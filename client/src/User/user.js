@@ -32,7 +32,9 @@ class Login extends React.Component {
     // send the userData for verification in backend
     const userData = { ...this.state };
     axios
-      .post("/api/users/login", { userData })
+      .post(`${process.env.REACT_APP_BACKENDLINK}/api/users/login`, {
+        userData,
+      })
       .then((response) => {
         const data = response.data;
 
@@ -41,12 +43,12 @@ class Login extends React.Component {
         } else {
           document.cookie = "valid=true";
           window.location.replace(
-            "https://landcare.herokuapp.com/users/profile"
+            `${process.env.REACT_APP_LINK}/users/profile`
           );
         }
       })
       .catch((err) => {
-        console.log(err);
+        alert(err);
       });
   };
   render() {
