@@ -40,14 +40,14 @@ class NavBar extends React.Component {
         <nav className="nav__bar">
           <div className="nav__bar__container">
             <div className="nav__bar-logo">
-              <Link to="/">
+              <Link to={"/"}>
                 <img src={logo} alt="logo" name="logo" />
               </Link>
             </div>
             <ul className="nav__bar__list-desktop">
               <Links styleName="nav__bar-links" />
               <li className="nav__bar-links">
-                <a href="/#contact" name="contact">
+                <a href={"/#contact"} name="contact">
                   Contact Us
                 </a>
               </li>
