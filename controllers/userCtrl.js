@@ -19,3 +19,5 @@ module.exports.postLogin = (req, res, next) => {
     });
   }
 };
+
+module.exports.logout = (req, res) => {};
