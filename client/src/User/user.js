@@ -3,6 +3,8 @@ import axios from "axios";
 import Button from "../components/button/button";
 import "./user.scss";
 import Footer from "../components/footer/footer.js";
+import { Loader } from "../components/loader/loader";
+import Popup from "../popup/popup";
 
 class Login extends React.Component {
   constructor(props) {
@@ -10,6 +12,9 @@ class Login extends React.Component {
     this.state = {
       username: "",
       password: "",
+      loading: false,
+      popup: false,
+      message: "",
     };
   }
 
@@ -27,33 +32,26 @@ class Login extends React.Component {
     }
   };
 
-  submitForm = (e) => {
+  submitForm = async (e) => {
     e.preventDefault();
     // send the userData for verification in backend
     const userData = { ...this.state };
-    axios
-      .post(`${process.env.REACT_APP_BACKENDLINK}/api/users/login`, {
-        userData,
-      })
-      .then((response) => {
-        const data = response.data;
-
-        if (data.error) {
-          alert(data.error);
-        } else {
-          document.cookie = "valid=true";
-          window.location.replace(
-            `${process.env.REACT_APP_LINK}/users/profile`
-          );
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKENDLINK}/api/users/login`,
+        {
+          userData,
         }
-      })
-      .catch((err) => {
-        alert(err);
-      });
+      );
+    } catch (error) {
+      this.setState({ popup: true });
+    }
   };
   render() {
     return (
       <>
+        {this.state.popup && <Popup message={this.state.message} />}
+        {this.state.loading && <Loader />}
         <section className="login">
           <div className="login__container">
             <h1>Welcome to landC@re admin! </h1>
