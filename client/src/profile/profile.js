@@ -9,9 +9,19 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       messages: [],
+      token: [],
     };
   }
   componentDidMount() {
+    axios
+      .get(`${process.env.REACT_APP_BACKENDLINK}/api/users/checktoken`)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     axios
       .get(`${process.env.REACT_APP_BACKENDLINK}/api/form/messages`)
       .then((result) => {
@@ -39,6 +49,9 @@ class Profile extends React.Component {
       <>
         <section className="messages">
           <h1>Welcome Admin!</h1>
+          <Link className="logout_link" to="#">
+            Logout
+          </Link>
           <div className="messages__container">
             <ul>
               {list.length > 0
@@ -50,7 +63,7 @@ class Profile extends React.Component {
                       >
                         <Link
                           className="group__icon-envelope"
-                          to={`${process.env.REACT_APP_LINK}/message/${message._id}`}
+                          to={`/message/${message._id}`}
                         >
                           <i className="far fa-envelope"></i>
                         </Link>
@@ -60,11 +73,7 @@ class Profile extends React.Component {
                             {`${message.firstName} , ${message.lastName}`}
                           </span>
                           on {message.date}
-                          <Link
-                            to={`${process.env.REACT_APP_LINK}/message/${message._id}`}
-                          >
-                            Click
-                          </Link>
+                          <Link to={`/message/${message._id}`}>Click</Link>
                           to read
                         </p>
 
