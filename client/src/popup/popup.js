@@ -2,25 +2,49 @@ import "./popup.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 
+function Display(props) {
+  return (
+    <div className="popup">
+      <div className="popup__container">
+        <Link to="#" alt="close-button" onClick={props.closeButton}>
+          <i className="fas fa-times-circle"></i>
+        </Link>
+        <div className="popup__container-text">
+          <p>{props.message}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 class Popup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: "",
+      visible: true,
+    };
+  }
+
   componentDidMount() {
     setTimeout(() => {
-      window.location.replace(this.props.url);
-    }, 3000);
+      this.setState({ visible: false });
+    }, 2000);
   }
+
+  closeButton = () => {
+    return this.setState({ visible: false });
+  };
+
   render() {
     return (
       <>
-        <div className="popup">
-          <div className="popup__container">
-            <Link to="/" alt="close-button">
-              <i className="fas fa-times-circle"></i>
-            </Link>
-            <div className="popup__container-text">
-              <p>{this.props.children}</p>
-            </div>
-          </div>
-        </div>
+        {this.state.visible && (
+          <Display
+            message={this.props.message}
+            closeButton={this.closeButton}
+          />
+        )}
       </>
     );
   }
