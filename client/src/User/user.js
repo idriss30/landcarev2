@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 import Button from "../components/button/button";
 import "./user.scss";
 import Footer from "../components/footer/footer.js";
@@ -15,9 +16,17 @@ class Login extends React.Component {
       loading: false,
       popup: false,
       message: "",
+      redirect: false,
     };
   }
 
+  async componentDidMount() {
+    this.setState({ loading: true });
+    const checkToken = await axios.get(
+      `${process.env.REACT_APP_BACKENDLINK}/api/users/checkToken`
+    );
+    console.log(checkToken);
+  }
   handleForm = (e) => {
     e.preventDefault();
     switch (e.target.name) {
@@ -31,27 +40,53 @@ class Login extends React.Component {
         return;
     }
   };
+  displayPopup = (message) => {
+    this.setState({ popup: true });
+    this.setState({ message });
+    setTimeout(() => {
+      this.setState({ popup: false });
+    }, 2500);
+  };
 
+  hidePopup = () => {
+    this.setState({ popup: false });
+  };
+
+  resetForm = () => {
+    this.setState({ username: "" });
+    this.setState({ password: "" });
+  };
   submitForm = async (e) => {
     e.preventDefault();
+    if (this.state.popup) return;
+    this.setState({ loading: true });
     // send the userData for verification in backend
-    const userData = { ...this.state };
+    const { username, password } = { ...this.state };
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_BACKENDLINK}/api/users/login`,
         {
-          userData,
+          username,
+          password,
         }
       );
+      this.setState({ loading: false });
+      if (response.status === 200) {
+        this.setState({ redirect: true });
+      }
     } catch (error) {
-      this.setState({ popup: true });
+      this.setState({ loading: false });
+      this.displayPopup(error.message);
     }
+    this.resetForm();
   };
   render() {
     return (
       <>
         {this.state.popup && <Popup message={this.state.message} />}
         {this.state.loading && <Loader />}
+        {this.state.redirect && <Redirect to="/users/profile" />}
+
         <section className="login">
           <div className="login__container">
             <h1>Welcome to landC@re admin! </h1>
@@ -70,6 +105,7 @@ class Login extends React.Component {
                   autoFocus
                   placeholder="username"
                   onChange={this.handleForm}
+                  value={this.state.username}
                 />
               </div>
               <div className="login__form-group">
@@ -80,6 +116,7 @@ class Login extends React.Component {
                   required
                   placeholder="password"
                   onChange={this.handleForm}
+                  value={this.state.password}
                 />
               </div>
               <div>
