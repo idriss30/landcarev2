@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const cookieParser = require("cookie-parser");
 const formRoutes = require("./routes/formRoute");
 const userRoutes = require("./routes/loginRoute");
 const mongoose = require("mongoose");
@@ -11,16 +11,14 @@ require("dotenv").config();
 const app = express();
 // create port
 const port = process.env.PORT || 5000;
+
 // configuration for basic rest
-app.use(cors());
+app.use(cookieParser());
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use("/api/form", formRoutes);
 app.use("/api/users", userRoutes);
-
-app.get("*", (req, res, next) => {
-  res.send("welcome to landcare api, please check your endpoint");
-});
 
 // connect to the database
 try {
