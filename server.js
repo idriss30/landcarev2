@@ -11,12 +11,13 @@ require("dotenv").config();
 const app = express();
 // create port
 const port = process.env.PORT || 5000;
-
-// configuration for basic rest
+// manage cookie
 app.use(cookieParser());
-app.use(cors({ origin: true, credentials: true }));
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(
+  cors({ origin: true, credentials: true, exposedHeaders: ["Set-Cookie"] })
+); // tell the server to allow browsers to expose response to javascript frontend
 app.use("/api/form", formRoutes);
 app.use("/api/users", userRoutes);
 
