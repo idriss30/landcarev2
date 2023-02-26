@@ -20,13 +20,17 @@ class Login extends React.Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {}
+  checkToken = () => {
     this.setState({ loading: true });
-    const checkToken = await axios.get(
-      `${process.env.REACT_APP_BACKENDLINK}/api/users/checkToken`
-    );
-    console.log(checkToken);
-  }
+    axios
+      .get(`${process.env.REACT_APP_BACKENDLINK}/api/users/checkToken`, {
+        withCredentials: true,
+      })
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+    this.setState({ loading: false });
+  };
   handleForm = (e) => {
     e.preventDefault();
     switch (e.target.name) {
@@ -68,17 +72,20 @@ class Login extends React.Component {
         {
           username,
           password,
-        }
+        },
+        { withCredentials: true }
       );
       this.setState({ loading: false });
+      this.resetForm();
       if (response.status === 200) {
-        this.setState({ redirect: true });
+        //this.setState({ redirect: true });
+        console.log(document.cookie);
       }
     } catch (error) {
+      this.resetForm();
       this.setState({ loading: false });
       this.displayPopup(error.message);
     }
-    this.resetForm();
   };
   render() {
     return (
@@ -124,6 +131,12 @@ class Login extends React.Component {
               </div>
             </form>
           </div>
+          <button
+            style={{ width: "100px", height: "100px" }}
+            onClick={this.checkToken}
+          >
+            CheckToken
+          </button>
         </section>
         <Footer />
       </>
