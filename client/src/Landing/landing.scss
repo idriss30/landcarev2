@@ -211,23 +211,17 @@
     width: 100%;
     min-height: 100vh;
     padding-bottom: 4rem;
-    /*   background: rgb(202, 212, 157);
-    background: linear-gradient(
-      90deg,
-      rgba(202, 212, 157, 0.8) 13%,
-      rgba(71, 123, 80, 1) 62%
-    ); */
+
     @media only screen and(max-width:740px) {
       height: auto;
     }
-    /*    @media only screen and(max-width:420px) {
-      background: rgb(202, 212, 157);
-      background: linear-gradient(
-        150deg,
-        rgba(202, 212, 157, 0.8) 53%,
-        rgba(71, 123, 80, 1) 62%
-      );
-    } */
+    .form_popup {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      left: 0;
+      z-index: 400;
+    }
     &__container {
       width: 75%;
       height: 100%;
@@ -276,6 +270,8 @@
 
         form {
           width: 100%;
+          position: relative;
+          z-index: 600;
 
           .form_Group {
             width: 80%;
