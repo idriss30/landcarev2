@@ -35,6 +35,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 - crud operations
 - Animation
 - Error handling
+- Admin dashboard
 
 # How to use
 
