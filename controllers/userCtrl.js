@@ -10,18 +10,31 @@ module.exports.postLogin = async (req, res, next) => {
   const databaseUser = await User.findOne({ username });
   if (!databaseUser) return res.status(404).json({ message: "user not found" });
   if (databaseUser.password === password) {
-    jwt.sign({ username }, process.env.PASSPHRASE, { expiresIn: "1h" });
+    const token = jwt.sign({ username }, process.env.PASSPHRASE, {
+      expiresIn: "1h",
+    });
+    res.cookie("token", token, { httpOnly: true });
     return res.status(200).json({ message: "login in" });
   }
   return res.status(403).json({ message: "password not found" });
 };
 
-module.exports.checkToken = (req, res, next) => {
+module.exports.checkToken = (req, res) => {
+  const token = req.cookies.token;
+  if (!token) return res.status(200).json({ message: "no token" });
   try {
-    const token = req.token;
-    const decoded = jwt.verify(token, process.env.PASSPHRASE);
-    return res.json({ username: decoded.username });
+    jwt.verify(token, process.env.PASSPHRASE);
+    res.status(200).json({ message: "token decoded" });
   } catch (error) {
-    res.json({ error: error.message });
+    res.status(403).json({ message: error.message });
   }
+};
+
+module.exports.logout = (req, res) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(403).json({ message: "you are not logged In" });
+  }
+  res.clearCookie("token");
+  res.status(200).json({ message: "you have been logged out" });
 };
