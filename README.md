@@ -80,6 +80,11 @@ $ npm run start
 # Create front-end build
 $ npm run build
 
+# demo login
+# you can access the admin dashbboard by using login link in the footer
+# with the following credentials
+$ username: landcare
+$ password: landcare
 ```
 
 # Author
