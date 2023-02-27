@@ -20,17 +20,29 @@ class Login extends React.Component {
     };
   }
 
-  componentDidMount() {}
-  checkToken = () => {
+  componentDidMount() {
     this.setState({ loading: true });
     axios
       .get(`${process.env.REACT_APP_BACKENDLINK}/api/users/checkToken`, {
         withCredentials: true,
       })
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
-    this.setState({ loading: false });
-  };
+      .then((response) => {
+        this.setState({ loading: false });
+        if (
+          response.status === 200 &&
+          response.data.message === "token decoded"
+        )
+          return this.setState({ redirect: true });
+        else {
+          return;
+        }
+      })
+      .catch((error) => {
+        this.setState({ loading: false });
+        this.displayPopup(error.message);
+      });
+  }
+
   handleForm = (e) => {
     e.preventDefault();
     switch (e.target.name) {
@@ -78,8 +90,7 @@ class Login extends React.Component {
       this.setState({ loading: false });
       this.resetForm();
       if (response.status === 200) {
-        //this.setState({ redirect: true });
-        console.log(document.cookie);
+        this.setState({ redirect: true });
       }
     } catch (error) {
       this.resetForm();
@@ -131,12 +142,6 @@ class Login extends React.Component {
               </div>
             </form>
           </div>
-          <button
-            style={{ width: "100px", height: "100px" }}
-            onClick={this.checkToken}
-          >
-            CheckToken
-          </button>
         </section>
         <Footer />
       </>
