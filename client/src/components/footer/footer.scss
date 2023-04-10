@@ -25,5 +25,13 @@ footer {
         }
       }
     }
+    &-text-link {
+      color: $tertiary-color;
+      display: block;
+      padding: 1rem 0;
+    }
+    &-text-link:visited {
+      color: $tertiary-color;
+    }
   }
 }
