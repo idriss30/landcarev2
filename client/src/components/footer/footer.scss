@@ -4,6 +4,8 @@ footer {
   background-color: $hover-color;
   color: $secondary-color;
   text-align: center;
+  position: relative;
+  z-index: 500;
   font-size: 0.8rem;
   .logo {
     width: 10%;
