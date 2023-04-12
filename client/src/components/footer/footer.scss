@@ -7,11 +7,19 @@ footer {
   position: relative;
   z-index: 500;
   font-size: 0.8rem;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
   .logo {
     width: 10%;
   }
 
   .footer__container {
+    width: 100%;
     &-social {
       ul {
         list-style: none;
@@ -26,6 +34,10 @@ footer {
           color: $secondary-color;
         }
       }
+    }
+    &-text {
+      width: 80%;
+      margin: 0 auto;
     }
     &-text-link {
       color: $tertiary-color;

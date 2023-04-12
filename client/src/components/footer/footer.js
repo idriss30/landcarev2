@@ -38,10 +38,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="footer__container-text"></div>
+        <div className="footer__container-text">
+          <span>copyright LandC@re</span>
+          <p>This is a mockup, it is just for demonstration purpose..</p>
+        </div>
 
-        <span>copyright LandC@re</span>
-        <p>This is a mockup, it is just for demonstration purpose..</p>
         <div>
           <Link to="/users/login" className="footer__container-text-link">
             Admin Login
