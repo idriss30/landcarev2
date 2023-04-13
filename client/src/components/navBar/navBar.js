@@ -1,6 +1,6 @@
 import menuItems from "./MenuItems";
 import logo from "../../svgs/logo.svg";
-
+import { HashLink } from "react-router-hash-link";
 import "./navBar.scss";
 
 import React from "react";
@@ -47,9 +47,9 @@ class NavBar extends React.Component {
             <ul className="nav__bar__list-desktop">
               <Links styleName="nav__bar-links" />
               <li className="nav__bar-links">
-                <a href={"/#contact"} name="contact">
+                <HashLink smooth to={"/#contact-me"}>
                   Contact Us
-                </a>
+                </HashLink>
               </li>
             </ul>
 
@@ -70,7 +70,9 @@ class NavBar extends React.Component {
             }}
           >
             <Links styleName="nav__bar__mobile-list-links" />
-            <a href="/#contact">Contact Us</a>
+            <HashLink smooth to={"/#contact-me"}>
+              Contact Us
+            </HashLink>
           </div>
         )}
       </header>
