@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Form from "./form";
 import Background from "../background.svg";
 import Birds from "../components/birds/birds";
+import { HashLink } from "react-router-hash-link";
 
 class Landing extends React.Component {
   render() {
@@ -24,8 +25,9 @@ class Landing extends React.Component {
               <p>100% service guarantee</p>
 
               <Link to="/about">About us</Link>
-
-              <a href="/#contact">Contact Us</a>
+              <HashLink smooth to={"/#contact-me"}>
+                Contact us
+              </HashLink>
             </div>
             <div className="landing__container-animation">
               <div className="landing__container-animation-image">
@@ -117,8 +119,12 @@ class Landing extends React.Component {
             </div>
           </section>
 
-          <section className="get__in__touch">
-            <div className="get__in__touch__container" id="contact">
+          <section
+            className="get__in__touch"
+            id="contact-me"
+            ref={this.contactRef}
+          >
+            <div className="get__in__touch__container">
               <div className="get__in__touch__container-text">
                 <h4>Get Started</h4>
                 <p>
