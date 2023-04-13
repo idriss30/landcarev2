@@ -4,7 +4,9 @@
   width: 100%;
   min-height: 100vh;
   margin-top: 0;
-
+  @media only screen and(max-width:420px) {
+    margin-bottom: 2rem;
+  }
   &__container {
     width: 100%;
     height: 100vh;
@@ -225,6 +227,7 @@
     @media only screen and(max-width:740px) {
       height: auto;
     }
+
     .form_popup {
       width: 100vw;
       height: 100vh;
